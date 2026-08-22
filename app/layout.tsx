@@ -3,10 +3,10 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('http://83.166.247.193'),
-  title: 'Екатерина — таргетолог',
+  title: 'Екатерина - таргетолог',
   description: 'Персональная страница Екатерины, специалиста по таргетированной рекламе.',
   openGraph: {
-    title: 'Екатерина — таргетолог',
+    title: 'Екатерина - таргетолог',
     description: 'Персональная страница Екатерины, специалиста по таргетированной рекламе.',
     images: ['/og.png'],
     locale: 'ru_RU',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Екатерина — таргетолог',
+    title: 'Екатерина - таргетолог',
     description: 'Персональная страница Екатерины, специалиста по таргетированной рекламе.',
     images: ['/og.png'],
   },
