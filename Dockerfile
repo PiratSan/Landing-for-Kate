@@ -4,6 +4,12 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
+FROM node:24-alpine AS production-dependencies
+
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+
 FROM node:24-alpine AS build
 
 WORKDIR /app
@@ -18,6 +24,7 @@ ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000
 
+COPY --from=production-dependencies /app/node_modules ./node_modules
 COPY --from=build /app/dist/standalone ./
 
 EXPOSE 3000
