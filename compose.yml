@@ -1,6 +1,7 @@
 services:
   site:
-    build: .
+    image: landing-for-kate-site:latest
+    pull_policy: never
     restart: unless-stopped
     expose:
       - "3000"
