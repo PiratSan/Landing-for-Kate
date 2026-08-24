@@ -21,10 +21,39 @@ const services = [
   },
 ];
 
-const steps = [
-  ['Знакомимся', 'Обсуждаем продукт, цели, аудиторию и то, что уже пробовали.'],
-  ['Собираем систему', 'Формулирую гипотезы, выстраиваю аналитику и готовлю запуск.'],
-  ['Улучшаем', 'Смотрю на цифры, масштабирую рабочее и объясняю каждый следующий шаг.'],
+const cases = [
+  {
+    number: '01',
+    title: 'Интернет-магазин мебели',
+    result: '417',
+    unit: 'заявок',
+    price: '352 ₽',
+    note: 'Стоимость одной заявки',
+  },
+  {
+    number: '02',
+    title: 'Офлайн-магазин мягкой мебели',
+    result: '81',
+    unit: 'заявка',
+    price: '550 ₽',
+    note: 'Стоимость одной заявки',
+  },
+  {
+    number: '03',
+    title: 'Корпусная мебель на заказ',
+    result: '70',
+    unit: 'заявок',
+    price: '1 030 ₽',
+    note: 'Клиенты общались с менеджером и делали расчёт — не просто заходили в бот.',
+  },
+  {
+    number: '04',
+    title: 'Онлайн-школа для педагогов',
+    result: '712',
+    unit: 'регистраций',
+    price: '298 ₽',
+    note: 'Регистрация с контактными данными: телефон и email.',
+  },
 ];
 
 export default function Home() {
@@ -36,7 +65,7 @@ export default function Home() {
           <span className="brand-role">таргетолог</span>
         </a>
         <nav className="main-nav" aria-label="Основная навигация">
-          <a href="#services">Услуги</a><a href="#process">Подход</a><a href="#contact">Контакты</a>
+          <a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a href="#contact">Контакты</a>
         </nav>
         <a className="header-cta" href="https://vk.me/target_vk63" target="_blank" rel="noreferrer">
           <FaVk aria-hidden="true" /> Обсудить проект
@@ -89,22 +118,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="process section" id="process">
-        <div className="process-intro">
-          <p className="section-label light">Мой подход</p>
-          <h2>Чутьё — хорошо.<br /><span>Данные — лучше.</span></h2>
-          <p>За каждым решением стоит гипотеза, а за каждой гипотезой — цифры. Поэтому вы всегда понимаете, куда уходит бюджет и что он приносит.</p>
+      <section className="reviews section" id="reviews">
+        <div className="reviews-intro">
+          <p className="section-label light">Отзывы и результаты</p>
+          <h2>Цифры, которые<br /><span>говорят за работу.</span></h2>
+          <p>Немного результатов за последний месяц. Все четыре проекта продолжают работать и развиваться.</p>
         </div>
         <div className="data-card" aria-label="Схема роста рекламных показателей">
-          <div className="data-top"><span>Динамика кампании</span><strong>+38%</strong></div>
+          <div className="data-top"><span>Динамика кампании</span><strong>4 проекта</strong></div>
           <div className="chart" aria-hidden="true">
             <i style={{height:'24%'}} /><i style={{height:'36%'}} /><i style={{height:'32%'}} /><i style={{height:'52%'}} /><i style={{height:'48%'}} /><i style={{height:'68%'}} /><i style={{height:'83%'}} />
           </div>
           <div className="data-bottom"><span>Тест</span><span>Анализ</span><span>Рост</span></div>
         </div>
-        <div className="steps">
-          {steps.map((step, index) => (
-            <article className="step" key={step[0]}><span>0{index + 1}</span><div><h3>{step[0]}</h3><p>{step[1]}</p></div></article>
+        <div className="case-grid">
+          {cases.map((item) => (
+            <article className="case-card" key={item.number}>
+              <div className="case-top"><span>{item.number}</span><p>{item.title}</p></div>
+              <div className="case-result"><strong>{item.result}</strong><span>{item.unit}</span></div>
+              <div className="case-price"><small>Стоимость</small><strong>{item.price}</strong></div>
+              <p className="case-note">{item.note}</p>
+            </article>
           ))}
         </div>
       </section>
