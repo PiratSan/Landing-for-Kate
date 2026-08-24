@@ -28,7 +28,7 @@ const cases = [
     result: '417',
     unit: 'заявок',
     price: '352 ₽',
-    note: 'Стоимость одной заявки',
+    priceLabel: 'Стоимость одной заявки',
   },
   {
     number: '02',
@@ -36,7 +36,7 @@ const cases = [
     result: '81',
     unit: 'заявка',
     price: '550 ₽',
-    note: 'Стоимость одной заявки',
+    priceLabel: 'Стоимость одной заявки',
   },
   {
     number: '03',
@@ -44,7 +44,8 @@ const cases = [
     result: '70',
     unit: 'заявок',
     price: '1 030 ₽',
-    note: 'Клиенты общались с менеджером и делали расчёт — не просто заходили в бот.',
+    priceLabel: 'Стоимость одной заявки',
+    detail: 'Клиенты общались с менеджером и делали расчёт — не просто заходили в бот.',
   },
   {
     number: '04',
@@ -52,7 +53,8 @@ const cases = [
     result: '712',
     unit: 'регистраций',
     price: '298 ₽',
-    note: 'Регистрация с контактными данными: телефон и email.',
+    priceLabel: 'Стоимость одной регистрации',
+    detail: 'Регистрация с контактными данными: телефон и email.',
   },
 ];
 
@@ -136,8 +138,8 @@ export default function Home() {
             <article className="case-card" key={item.number}>
               <div className="case-top"><span>{item.number}</span><p>{item.title}</p></div>
               <div className="case-result"><strong>{item.result}</strong><span>{item.unit}</span></div>
-              <div className="case-price"><small>Стоимость</small><strong>{item.price}</strong></div>
-              <p className="case-note">{item.note}</p>
+              <div className="case-price"><span>{item.priceLabel}</span><strong>{item.price}</strong></div>
+              {item.detail && <p className="case-note">{item.detail}</p>}
             </article>
           ))}
         </div>
