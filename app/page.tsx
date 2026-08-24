@@ -1,3 +1,5 @@
+import { FaArrowRight, FaPhoneAlt, FaTelegramPlane, FaVk } from 'react-icons/fa';
+
 const services = [
   {
     number: '01',
@@ -19,26 +21,62 @@ const services = [
   },
 ];
 
-const steps = [
-  ['Знакомимся', 'Обсуждаем продукт, цели, аудиторию и то, что уже пробовали.'],
-  ['Собираем систему', 'Формулирую гипотезы, выстраиваю аналитику и готовлю запуск.'],
-  ['Улучшаем', 'Смотрю на цифры, масштабирую рабочее и объясняю каждый следующий шаг.'],
+const cases = [
+  {
+    number: '01',
+    title: 'Интернет-магазин мебели',
+    result: '417',
+    unit: 'заявок',
+    price: '352 ₽',
+    priceLabel: 'Стоимость одной заявки',
+  },
+  {
+    number: '02',
+    title: 'Офлайн-магазин мягкой мебели',
+    result: '81',
+    unit: 'заявка',
+    price: '550 ₽',
+    priceLabel: 'Стоимость одной заявки',
+  },
+  {
+    number: '03',
+    title: 'Корпусная мебель на заказ',
+    result: '70',
+    unit: 'заявок',
+    price: '1 030 ₽',
+    priceLabel: 'Стоимость одной заявки',
+    detail: 'Клиенты общались с менеджером и делали расчёт — не просто заходили в бот.',
+  },
+  {
+    number: '04',
+    title: 'Онлайн-школа для педагогов',
+    result: '712',
+    unit: 'регистраций',
+    price: '298 ₽',
+    priceLabel: 'Стоимость одной регистрации',
+    detail: 'Регистрация с контактными данными: телефон и email.',
+  },
 ];
 
 export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Екатерина — на главную">ЕК<span>/</span></a>
+        <a className="brand" href="#top" aria-label="Екатерина — на главную">
+          <span className="brand-name">Екатерина</span>
+          <span className="brand-role">таргетолог</span>
+        </a>
         <nav className="main-nav" aria-label="Основная навигация">
-          <a href="#services">Услуги</a><a href="#process">Подход</a><a href="#contact">Контакты</a>
+          <a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a href="#contact">Контакты</a>
         </nav>
-        <a className="header-cta" href="#contact">Обсудить проект <span aria-hidden="true">↗</span></a>
+        <a className="header-cta" href="https://vk.me/target_vk63" target="_blank" rel="noreferrer">
+          <FaVk aria-hidden="true" /> Обсудить проект
+        </a>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Таргетолог для малого бизнеса</p>
+          <p className="eyebrow"><span /> Таргетолог для бизнеса</p>
           <h1>Реклама, которая<span className="accent-line">ведёт к заявкам<span className="spark">✦</span></span></h1>
           <p className="hero-text">Я Екатерина. Помогаю бизнесу находить своих людей в соцсетях — от первой гипотезы до понятной системы привлечения клиентов.</p>
           <div className="hero-actions">
@@ -46,9 +84,13 @@ export default function Home() {
             <a className="text-link" href="#services">Посмотреть услуги</a>
           </div>
         </div>
-        <aside className="hero-card" aria-label="Принципы работы">
-          <div className="card-orbit" aria-hidden="true"><span className="orbit orbit-one" /><span className="orbit orbit-two" /><span className="orbit-dot" /><span className="orbit-mark">ЕК</span></div>
-          <div className="card-caption"><p>Стратегия <span>•</span> Аналитика <span>•</span> Креатив</p><strong>Точно в цель,<br />без лишнего шума.</strong></div>
+        <aside className="hero-card portrait-card" aria-label="Екатерина — таргетолог">
+          <div className="portrait-frame" role="img" aria-label="Портрет Екатерины" />
+          <div className="portrait-status"><span /> На связи</div>
+          <div className="card-caption portrait-caption">
+            <p>Стратегия <span>•</span> Аналитика <span>•</span> Креатив</p>
+            <strong>Екатерина.<br />Ваш таргетолог.</strong>
+          </div>
         </aside>
         <div className="hero-footnote"><span>01</span><p>Вникаю в продукт<br />и говорю на языке цифр</p></div>
       </section>
@@ -78,35 +120,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="process section" id="process">
-        <div className="process-intro">
-          <p className="section-label light">Мой подход</p>
-          <h2>Чутьё — хорошо.<br /><span>Данные — лучше.</span></h2>
-          <p>За каждым решением стоит гипотеза, а за каждой гипотезой — цифры. Поэтому вы всегда понимаете, куда уходит бюджет и что он приносит.</p>
+      <section className="reviews section" id="reviews">
+        <div className="reviews-intro">
+          <p className="section-label light">Отзывы и результаты</p>
+          <h2>Цифры, которые<br /><span>говорят за работу.</span></h2>
+          <p>Немного результатов за последний месяц. Все четыре проекта продолжают работать и развиваться.</p>
         </div>
         <div className="data-card" aria-label="Схема роста рекламных показателей">
-          <div className="data-top"><span>Динамика кампании</span><strong>+38%</strong></div>
+          <div className="data-top"><span>Динамика кампании</span><strong>4 проекта</strong></div>
           <div className="chart" aria-hidden="true">
             <i style={{height:'24%'}} /><i style={{height:'36%'}} /><i style={{height:'32%'}} /><i style={{height:'52%'}} /><i style={{height:'48%'}} /><i style={{height:'68%'}} /><i style={{height:'83%'}} />
           </div>
           <div className="data-bottom"><span>Тест</span><span>Анализ</span><span>Рост</span></div>
         </div>
-        <div className="steps">
-          {steps.map((step, index) => (
-            <article className="step" key={step[0]}><span>0{index + 1}</span><div><h3>{step[0]}</h3><p>{step[1]}</p></div></article>
+        <div className="case-grid">
+          {cases.map((item) => (
+            <article className="case-card" key={item.number}>
+              <div className="case-top"><span>{item.number}</span><p>{item.title}</p></div>
+              <div className="case-result"><strong>{item.result}</strong><span>{item.unit}</span></div>
+              <div className="case-price"><span>{item.priceLabel}</span><strong>{item.price}</strong></div>
+              {item.detail && <p className="case-note">{item.detail}</p>}
+            </article>
           ))}
-        </div>
-      </section>
-
-      <section className="principles section" aria-labelledby="principles-title">
-        <div>
-          <p className="section-label">В работе</p>
-          <h2 id="principles-title">Прозрачно.<br />Спокойно.<br /><span>По делу.</span></h2>
-        </div>
-        <div className="principle-grid">
-          <article><strong>3</strong><p>уровня анализа:<br />аудитория, креатив, воронка</p></article>
-          <article><strong>1</strong><p>понятный отчёт<br />без сложных таблиц</p></article>
-          <article><strong>0</strong><p>решений наугад<br />и туманных обещаний</p></article>
         </div>
       </section>
 
@@ -133,14 +168,36 @@ export default function Home() {
 
       <section className="contact section" id="contact">
         <div className="contact-star" aria-hidden="true">✦</div>
-        <p className="section-label">Начнём?</p>
-        <h2>Расскажите о задаче.<br /><span>Я предложу следующий шаг.</span></h2>
-        <p className="contact-text">Коротко опишите проект и цель — обсудим, чем я могу быть полезна и какой формат подойдёт лучше.</p>
-        <a className="contact-button" href="mailto:?subject=Заявка%20с%20сайта%20Екатерины">Написать Екатерине <span aria-hidden="true">↗</span></a>
+        <div className="contact-heading">
+          <p className="section-label">Контакты</p>
+          <h2>Расскажите о задаче.<br /><span>Я предложу следующий шаг.</span></h2>
+          <p className="contact-text">Выберите удобный способ связи. Отвечу на вопросы и помогу определить подходящий формат работы.</p>
+        </div>
+        <div className="contact-panel" aria-label="Способы связи">
+          <a className="contact-link" href="tel:+79879513633">
+            <span className="contact-icon"><FaPhoneAlt aria-hidden="true" /></span>
+            <span><small>Телефон</small><strong>+7 (987) 951-36-33</strong></span>
+            <FaArrowRight className="contact-arrow" aria-hidden="true" />
+          </a>
+          <a className="contact-link" href="https://vk.ru/target_vk63" target="_blank" rel="noreferrer">
+            <span className="contact-icon"><FaVk aria-hidden="true" /></span>
+            <span><small>Сообщество</small><strong>ВКонтакте</strong></span>
+            <FaArrowRight className="contact-arrow" aria-hidden="true" />
+          </a>
+          <a className="contact-link" href="https://web.telegram.org/a/#427412230" target="_blank" rel="noreferrer">
+            <span className="contact-icon"><FaTelegramPlane aria-hidden="true" /></span>
+            <span><small>Мессенджер</small><strong>Telegram</strong></span>
+            <FaArrowRight className="contact-arrow" aria-hidden="true" />
+          </a>
+          <a className="contact-button" href="https://vk.me/target_vk63" target="_blank" rel="noreferrer">
+            <span><FaVk aria-hidden="true" /> Написать Екатерине</span>
+            <FaArrowRight aria-hidden="true" />
+          </a>
+        </div>
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#top">ЕК<span>/</span></a>
+        <a className="brand footer-brand" href="#top"><span className="brand-name">Екатерина</span><span className="brand-role">таргетолог</span></a>
         <p>Таргетированная реклама<br />для бизнеса</p>
         <a href="#top">Наверх ↑</a>
       </footer>
