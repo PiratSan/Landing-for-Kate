@@ -8,3 +8,8 @@
 - Verify the VPS CPU architecture before selecting the local Docker build platform.
 - Do not modify `Dockerfile`, `compose.yml`, `Caddyfile`, or other server configuration unless the user explicitly authorizes that specific change.
 - Keep approved source changes committed and pushed to GitHub.
+
+## Private preview
+
+- After approved changes, Codex may push the current `design` branch to the private preview repository at `git.chatgpt-team.site` and update the private preview without asking for additional confirmation.
+- Do not publish the source code to any other repository.
