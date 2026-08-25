@@ -84,12 +84,13 @@ export default function Home() {
             <a className="text-link" href="#services">Посмотреть услуги</a>
           </div>
         </div>
-        <aside className="hero-card portrait-card" aria-label="Екатерина — таргетолог">
+        <aside className="hero-card portrait-card" aria-label="Екатерина — таргетолог, на связи">
           <div className="portrait-frame" role="img" aria-label="Портрет Екатерины" />
           <div className="portrait-status"><span /> На связи</div>
           <div className="card-caption portrait-caption">
-            <p>Стратегия <span>•</span> Аналитика <span>•</span> Креатив</p>
-            <strong>Екатерина.<br />Ваш таргетолог.</strong>
+            <p className="portrait-kicker">Таргетолог для бизнеса</p>
+            <strong>Екатерина</strong>
+            <span className="portrait-micro">Стратегия <i aria-hidden="true">✦</i> Аналитика <i aria-hidden="true">✦</i> Креатив</span>
           </div>
         </aside>
         <div className="hero-footnote"><span>01</span><p>Вникаю в продукт<br />и говорю на языке цифр</p></div>
