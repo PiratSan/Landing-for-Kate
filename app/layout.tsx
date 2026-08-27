@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://83.166.247.193'),
+  metadataBase: new URL('https://targetkate.ru'),
   title: 'Екатерина — таргетолог для бизнеса',
   description: 'Запуск, ведение и аудит таргетированной рекламы. Стратегия, креативы и аналитика с понятным результатом.',
   openGraph: {

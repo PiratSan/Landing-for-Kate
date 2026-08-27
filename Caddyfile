@@ -1,3 +1,12 @@
+targetkate.ru {
+    encode zstd gzip
+    reverse_proxy site:3000
+}
+
+www.targetkate.ru {
+    redir https://targetkate.ru{uri} permanent
+}
+
 http://83.166.247.193 {
     encode zstd gzip
     reverse_proxy site:3000
